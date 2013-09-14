@@ -89,7 +89,7 @@
 	  <% if (@page && (@page.title=="Staff Members")) %>
 	    <%#= stylesheet_link_tag "test" %>
 	    <%#= render "/refinery/staff_members/staff_members/index" %>
-	    <%= yield :body %>
+	    <%= yield : %>
           <% else %>
 	    <%= yield %>
 	  <% end %>

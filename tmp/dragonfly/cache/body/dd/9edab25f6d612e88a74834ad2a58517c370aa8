@@ -1,0 +1,66 @@
+/* line 1, ../../../../../../.rvm/gems/ruby-1.9.2-p320/gems/refinerycms-page-images-2.0.1/app/assets/stylesheets/refinery/page-image-picker.css.scss */
+#page_images {
+  margin: 0;
+  padding: 0;
+  width: 280px;
+  width: 100%;
+}
+/* line 6, ../../../../../../.rvm/gems/ruby-1.9.2-p320/gems/refinerycms-page-images-2.0.1/app/assets/stylesheets/refinery/page-image-picker.css.scss */
+#page_images li {
+  position: relative;
+  list-style: none;
+  float: left;
+  margin: 10px 20px 20px 0;
+}
+/* line 11, ../../../../../../.rvm/gems/ruby-1.9.2-p320/gems/refinerycms-page-images-2.0.1/app/assets/stylesheets/refinery/page-image-picker.css.scss */
+#page_images li * {
+  cursor: move;
+}
+/* line 14, ../../../../../../.rvm/gems/ruby-1.9.2-p320/gems/refinerycms-page-images-2.0.1/app/assets/stylesheets/refinery/page-image-picker.css.scss */
+#page_images li.odd {
+  margin-right: 18px;
+}
+/* line 17, ../../../../../../.rvm/gems/ruby-1.9.2-p320/gems/refinerycms-page-images-2.0.1/app/assets/stylesheets/refinery/page-image-picker.css.scss */
+#page_images li .image_actions {
+  background: white;
+  position: absolute;
+  padding: 3px;
+  left: 0;
+  top: 0;
+  width: 135px;
+}
+/* line 24, ../../../../../../.rvm/gems/ruby-1.9.2-p320/gems/refinerycms-page-images-2.0.1/app/assets/stylesheets/refinery/page-image-picker.css.scss */
+#page_images li .image_actions * {
+  cursor: pointer;
+}
+/* line 27, ../../../../../../.rvm/gems/ruby-1.9.2-p320/gems/refinerycms-page-images-2.0.1/app/assets/stylesheets/refinery/page-image-picker.css.scss */
+#page_images li .image_actions.no_captions {
+  background: transparent;
+}
+/* line 32, ../../../../../../.rvm/gems/ruby-1.9.2-p320/gems/refinerycms-page-images-2.0.1/app/assets/stylesheets/refinery/page-image-picker.css.scss */
+#page_images > li .image_actions img.caption {
+  position: absolute;
+  right: 3px;
+  top: 3px;
+}
+
+/* line 40, ../../../../../../.rvm/gems/ruby-1.9.2-p320/gems/refinerycms-page-images-2.0.1/app/assets/stylesheets/refinery/page-image-picker.css.scss */
+#content ul.ui-sortable li {
+  border: 0;
+  background: none !important;
+}
+/* line 44, ../../../../../../.rvm/gems/ruby-1.9.2-p320/gems/refinerycms-page-images-2.0.1/app/assets/stylesheets/refinery/page-image-picker.css.scss */
+#content #page_images.ui-sortable li.placeholder {
+  width: 135px;
+  height: 135px;
+}
+
+/* line 50, ../../../../../../.rvm/gems/ruby-1.9.2-p320/gems/refinerycms-page-images-2.0.1/app/assets/stylesheets/refinery/page-image-picker.css.scss */
+a#add_image_link {
+  margin-top: 0;
+  line-height: 29px;
+  padding-left: 20px;
+  display: inline;
+  border-bottom: 0;
+  background: url(/assets/refinery/icons/add.png) no-repeat 0px 6px;
+}
