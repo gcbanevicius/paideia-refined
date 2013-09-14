@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+    <ul class="nav nav-list">
+    <% parent_page = @page.parent %>
+    <% parent_page ||= @page %>
+    <% parent_link = refinery.url_for(parent_page.url) %>
+      <% act_class = "active" if current_page?(parent_link) %>
+      <% act_class ||= "" %>
+      <li class="nav-header <%= act_class %>"><a href="<%= parent_link %>"><%= parent_page.title %></a></li>
+
+      <% parent_page.children.keep_if { |child| (child.in_menu? || /^Privacy Policy/ =~ child.title) } %>
+      <% parent_page.children.each_with_index do |child, index| %>
+	<% page_link = refinery.url_for(child.url) %>
+        <li class="divider"></li>
+	<% if current_page?(page_link) %>
+          <li class="active"><a href="<%= page_link %>"><%= child.title %></a></li>
+	<% else %>
+          <li><a href="<%= page_link %>"><%= child.title %></a></li>
+	<% end %>
+      <% end %>
+   
+    </ul>
+
+
+</html>

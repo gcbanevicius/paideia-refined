@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "PaideiaBootstrap" %></title>
+    <%= csrf_meta_tags %>
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js" type="text/javascript"></script>
+<![endif]-->
+
+    <%= stylesheet_link_tag "application", :media => "all" %>
+
+    <!-- For third-generation iPad with high-resolution Retina display: -->
+    <!-- Size should be 144 x 144 pixels -->
+    <%= favicon_link_tag 'apple-touch-icon-144x144-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144' %>
+
+    <!-- For iPhone with high-resolution Retina display: -->
+    <!-- Size should be 114 x 114 pixels -->
+    <%= favicon_link_tag 'apple-touch-icon-114x114-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '114x114' %>
+
+    <!-- For first- and second-generation iPad: -->
+    <!-- Size should be 72 x 72 pixels -->
+    <%= favicon_link_tag 'apple-touch-icon-72x72-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '72x72' %>
+
+    <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+    <!-- Size should be 57 x 57 pixels -->
+    <%= favicon_link_tag 'apple-touch-icon-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png' %>
+
+    <!-- For all other devices -->
+    <!-- Size should be 32 x 32 pixels -->
+    <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
+
+    <%= stylesheet_link_tag "prettyPhoto.css" %>
+
+
+  </head>
+  <body class="hidden-phones hidden-tablets">
+
+    <div class="container-fluid" id="main-content">
+
+
+
+
+    <div class="navbar">
+      <div class="navbar-inner">
+
+    <header>
+ <%= image_tag "logo.png" %><%= image_tag "title.png" %>
+    </header>
+
+        <div class="container">
+
+	  <!-- the code between the anchor tags makes the navbar responsive -->
+	  <!-- also, collapse and nav-collapse tags surround what to hide -->
+<!--          <a data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar">-->
+<!--            <span class="icon-bar"></span>-->
+<!--            <span class="icon-bar"></span>-->
+<!--            <span class="icon-bar"></span>-->
+<!--          </a>-->
+
+    <%#= link_to Refinery::Core.site_name, refinery.root_path, :class => "brand" %>
+
+    <%= render(:partial => "/refinery/shared/menu", :locals => {
+                 :dom_id => 'menu',
+                 :css => 'menu'
+               }) %>
+        </div>
+      </div>
+    </div>  
+
+
+       
+
+
+      <%#= bootstrap_flash %>
+ 
+      <% if (current_page?("/home/index") || current_page?("/")) %>
+          <%= yield :carousel %>
+      <% end %>
+
+
+       	
+
+
+
+  <div class="row-fluid">        
+    
+  
+    <div class="span12">
+      <%= yield %>
+    </div><!--/span-->
+  </div><!--/row-->
+
+      <footer>
+        <p>&copy; The Paideia Institute 2013!!!</p>
+      </footer>
+
+
+
+
+
+    <!-- Javascripts
+================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <%= javascript_include_tag "application" %>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+
+    <script src="/assets/js/jquery.prettyPhoto.js"></script>
+
+<script type="text/javascript" charset="utf-8">
+
+function equalHeight(group) {
+   tallest = 0;
+   group.each(function() {
+      thisHeight = $(this).height();
+      if(thisHeight > tallest) {
+         tallest = thisHeight;
+      }
+   });
+   group.height(tallest);
+}
+
+$(document).ready(function() {
+	equalHeight($(".banner"));
+});
+
+
+
+$(document).ready(function() {
+	$("#first_carousel_indicator").click();
+});
+
+$(document).ready(function(){
+        $("a[rel^='prettyPhoto']").prettyPhoto({slideshow:5000, autoplay_slideshow:true, theme: 'pp_default', social_tools: false, allow_resize: false, default_width: 200, default_height: 200 })
+});
+
+
+$(document).ready(function() { $('.carousel').carousel({ interval: 10000, cycle: true }) });
+
+
+$(document).ready(function(){
+	$('.dropdown-toggle').hover(function(){
+		$('.dropdown-toggle').dropdown()
+	});	
+});
+
+</script>
+
+
+
+  </body>
+</html>

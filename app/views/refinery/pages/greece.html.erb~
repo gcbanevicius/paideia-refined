@@ -1,0 +1,25 @@
+
+
+     <div class="row-fluid">        
+	<div class="span1">
+        </div><!--/span -->
+	<div class="span5">
+	  <%= raw @page.content_for(:body) %>
+	</div>
+	<div class="span5">
+
+	  <%= raw @page.content_for(:acc) %>
+
+	<ul class="thumbnails">
+
+	  <% @page.images.each do |image| %>
+                <li >
+                  <a class="thumbnail" rel="prettyPhoto[gal]" href="<%= image.url %>" >
+	    <%= image_tag image.thumbnail('100x100').url %>
+		</a></li>
+	  <% end %>
+
+	</ul>
+
+	  </div>
+    </div>

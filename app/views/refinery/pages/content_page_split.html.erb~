@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+  <head>
+    <meta name="generator" content=
+    "HTML Tidy for Linux (vers 25 March 2009), see www.w3.org">
+    <title></title>
+  </head>
+  <body>
+    <div class="row-fluid">
+      <div class="span12"></div><!--/span -->
+    </div><!--row-fluid-->
+    <div class="row-fluid">
+      <div class="span12">
+        <%= raw @page.content_for(:body) %>
+      </div><!--span-->
+    </div><!--row-->
+    <div class="row-fluid">
+      <div class="span6">
+        <div class="row-fluid">
+          <div class="span12"></div><!--/span -->
+        </div><!--row-fluid-->
+        <%= raw @page.content_for(:split_body) %>
+      </div><!--span-->
+      <div class="span6  hidden-phone">
+        <div class="row-fluid">
+          <div class="span12"></div><!--/span -->
+        </div><!--row-fluid-->
+        <ul class="thumbnails">
+          <% min_cnt = [4, @page.images.length].min %><% min_cnt.times do |i| %><% image = @page.images[i] %>
+          <li>
+            <a class="thumbnail" rel="prettyPhoto[gal]" href=
+            "<%= image.url %>"><%= image_tag image.thumbnail('200x200').url %></a>
+          </li><% end %>
+        </ul>
+      </div><!--span-->
+    </div><!--row-->
+    <div class="row-fluid">
+      <div class="span12">
+        <%= raw @page.content_for(:lower_body_one) %>
+      </div><!--span-->
+    </div><!--row-->
+    <div class="row-fluid hidden-phone">
+      <div class="span12">
+        <ul class="thumbnails">
+          <% i = 4 %><% while i < @page.images.length do %><% image = @page.images[i] %>
+          <li>
+            <a class="thumbnail" rel="prettyPhoto[gal]" href=
+            "<%= image.url %>"><%= image_tag image.thumbnail('200x200').url %></a>
+          </li><% i = i+1 %><% end %>
+        </ul>
+      </div><!--span-->
+    </div><!--row-->
+    <div class="row-fluid">
+      <div class="span12">
+        <%= raw @page.content_for(:lower_body_two) %>
+      </div><!--span-->
+    </div><!--row-->
+  </body>
+</html>

@@ -1,0 +1,16 @@
+     <div class="row-fluid">        
+	<div class="span1">
+        </div><!--/span -->
+    </div><!--row-->	
+
+	<div class="row-fluid">
+        <div class="span1">
+	</div>
+
+        <div class="span11">
+
+	  <%= render '/refinery/content_page' %>
+	  <%#= raw @page.content_for(:body) %>
+
+        </div><!--/span-->
+        </div><!--/row-->

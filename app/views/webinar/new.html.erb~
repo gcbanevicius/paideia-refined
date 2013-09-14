@@ -1,0 +1,30 @@
+<h1>Sign Up</h1>
+
+<%= flash[:notice] %>
+
+<%= form_for(:webinar_user, :url => {:action => 'create'}) do |f| %>
+
+  <%= label_tag(:username) %>
+  <%= f.text_field(:username) %>
+  
+  <%= label_tag(:name) %>
+  <%= f.text_field(:name) %>
+
+  <%= label_tag(:home_institute) %>
+  <%= f.text_field(:home_institute) %>
+  
+  <%= label_tag(:email) %>
+  <%= f.text_field(:email) %>
+  
+  <%= label_tag(:email_confirmation) %>
+  <%= f.text_field(:email_confirmation) %>
+  
+  <%= label_tag(:password) %>
+  <%= f.text_field(:password) %>
+
+  <%= label_tag(:password_confirmation) %>
+  <%= f.text_field(:password_confirmation) %>
+  
+  <%= submit_tag("Register") %>
+  
+<% end %>

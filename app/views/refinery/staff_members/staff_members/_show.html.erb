@@ -1,0 +1,33 @@
+
+
+
+  <div class="row-fluid staff-header">
+  <div class="span1">
+    <p>
+      <%= image_fu item.thumbnail, nil %>
+    </p>
+  </div><!--/span-->
+  <div class="span11">
+    <p>
+      <h2><%=raw item.name %></h2>
+    </p>
+    <p>
+      <%=raw item.title %>
+    </p>
+  </div><!--/span-->
+  </div><!--/row-fluid-->
+
+
+  <div class="row-fluid staff-container">
+  <div class="span3">
+    <%= image_fu item.image, nil %>
+  </div><!--/span-->
+  <div class="span9">
+    <p>
+      <%=raw item.bio %>
+    </p>
+  </div><!--/span-->
+  </div><!--/row-fluid-->
+
+
+

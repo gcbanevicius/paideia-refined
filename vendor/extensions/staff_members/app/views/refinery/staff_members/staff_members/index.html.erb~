@@ -1,0 +1,28 @@
+<% content_for :body do %>
+  <ul id="staff_members">
+    <% @staff_members.each do |staff_member| %>
+      <li>
+        <%= link_to staff_member.name, refinery.staff_members_staff_member_path(staff_member) %>
+      </li>
+    <% end %>
+  </ul>
+<%#= will_paginate @staff_members, renderer: BootstrapPagination::Rails %>
+
+    <div class="pagination">
+    <ul>
+    <li><a href="#">Prev</a></li>
+    <li><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li><a href="#">Next</a></li>
+    </ul>
+    </div>
+
+
+<% end %>
+
+<%#= render '/refinery/content_page' %>
+
+

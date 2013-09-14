@@ -1,0 +1,16 @@
+     <div class="row-fluid">        
+	<div class="span1">
+        </div><!--/span -->
+	<div class="span10">
+
+	  <% @page.images.each do |image| %>
+                <li >
+                  <a rel="prettyPhoto[main_gal]" href="<%= image.url %>" >
+	    	  <%= image_tag image.url %>
+		  </a></li>
+	  <% end %>
+
+	</div>
+	<div class="span1">
+        </div><!--/span -->
+    </div><!--row-->

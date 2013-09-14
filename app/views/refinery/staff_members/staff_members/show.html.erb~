@@ -1,0 +1,26 @@
+<% content_for :body_content_title do %>
+  <%= @staff_member.name %>
+<% end %>
+
+<% content_for :body do %>
+
+<div class="row-fluid">        
+  <div class="span12">
+  </div><!--/span -->
+</div><!--row-fluid-->
+
+  <%= render :partial => "show", :locals => {:item => @staff_member} %>
+
+<div class="row-fluid">       
+  <div class="span1">
+  </div><!--/span -->  
+   
+  <div class="span10">
+    <%= link_to "<< Back to Staff", "/staff_members" %>
+  </div><!--/span -->
+</div><!--row-fluid-->
+
+<% end %>
+
+<%#= raw @page.content_for(:body) %>
+<%= render '/refinery/content_page', :hide_sections => :body_content_title %>

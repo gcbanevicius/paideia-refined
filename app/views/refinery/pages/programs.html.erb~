@@ -1,0 +1,51 @@
+
+
+     <div class="row-fluid">
+	<div class="span10">
+	</div>
+	<div class="span1">
+	  <%= render '/refinery/content_page' %>
+	    <h1>Living Greek in Greece</h1>
+	    
+	    <h2>August 11 - August 25, 2013 </h2>
+	    <p>Living Greek in Greece is an introduction to spoken Attic Greek.  It is intended for graduate students, advanced undergraduates, high-school Greek teachers, and classics professors who would like to experience Ancient Greek as a active language.  In exceptional cases, graduating high-school seniors may be admitted.  Unlike Living Latin in Rome, this course assumes a thorough knowledge of Attic Greek grammar and proficiency reading intermediate Attic texts and Homer.  All participants should have at least two years of undergraduate Greek or the equivalent and should feel comfortable reading basic Attic prose.  No experience speaking Ancient Greek is required.
+	    </br></br>
+	    The seminar meets twice daily Monday - Friday  for ninety minutes each morning and afternoon. The theme for this year's seminar is "The Home Greek and Homecomings."   Reading's will include varied selections from Attic prose including Xenophon's Oeconomicus and Lysias' On the Murder of Eratosthenes as well as selections from Homer's Odyssey.  Discussion will take place - in keeping with the increasing ability of the participants - in Attic Greek.   In morning sessions, participants will read and discuss selections of Attic prose in Attic.  Afternoon sessions focus on translating Homeric into Attic Greek and the discussion of Homer in Attic.
+	    </br></br>
+	    </p>
+	    
+
+	<div class="row-fluid">
+	  <div class="span6">
+	    <h2>Accomodations</h2>
+	    <p>This year's seminar will be held at the Hellenikon Idyllion, a hotel and Hellenic cultural center located in the charming seaside village of Selianitika. Selianitika is located on the north coast of the Peloponnese on the Gulf of Corinth about halfway between Corinth and Patras. The Idyllion is a rustic guesthouse, nestled into a fruit garden just a few meters from a calm beach.
+	    </br></br>
+	    Accommodation at the Idyllion in shared bungalo apartments is included in the cost of the course. All apartments have a full bath, kitchen, and air conditioning. Groceries can be purchased in the nearby village. There are also numerous seaside tavernas within walking distance.  The Idyllion has wireless internet and limited printing and photocopying facilities. 
+	    </br></br>
+	    </p>
+	  </div><!--/span-->
+
+
+	  <div class="span6">
+
+	
+		<ul class="thumbnails">
+                <li class="span6">
+                  <a class="thumbnail" rel="prettyPhoto[gal]" href="/assets/lgig_thmb_1.jpg"><img class="group1" src="/assets/lgig_thmb_1.jpg" title="Image Title" /></a>
+                </li> <!--end thumb -->
+                <li class="span6">
+                  <a class="thumbnail" rel="prettyPhoto[gal]" href="/assets/lgig_thmb_2.jpg"><img class="group1" src="/assets/lgig_thmb_2.jpg" title="Image Title" /></a>
+                </li> <!--end thumb -->
+		</ul>
+
+		<ul class="thumbnails">
+                <li class="span6">
+                  <a class="thumbnail" rel="prettyPhoto[gal]" href="/assets/lgig_thmb_3.jpg"><img class="group1" src="/assets/lgig_thmb_3.jpg" title="Image Title" /></a>
+                </li> <!--end thumb -->
+                <li class="span6">
+                  <a class="thumbnail" rel="prettyPhoto[gal]" href="/assets/lgig_thmb_4.jpg"><img class="group1" src="/assets/lgig_thmb_4.jpg" title="Image Title" /></a>
+                </li> <!--end thumb -->
+
+		</ul>
+
+	  </div

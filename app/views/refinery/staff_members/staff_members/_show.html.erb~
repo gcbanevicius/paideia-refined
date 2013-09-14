@@ -1,0 +1,52 @@
+
+     <div class="row-fluid">        
+	<div class="span1">
+        </div><!--/span -->
+	<div class="span10">
+
+  <div class="row-fluid staff-header">
+  <div class="span1 staff-thumbnail">
+    <p >
+      <%= image_fu item.thumbnail, nil %>
+    </p>
+  </div><!--/span-->
+  <div class="span11">
+    <% if current_page?("/staff_members") %>
+      <a href="staff_members/<%= item.id %>">
+        <h2><%=raw item.name %></h2>
+      </a>
+    <% else %>
+      <a href="">
+        <h2><%=raw item.name %></h2>
+      </a>
+    <% end %>
+    <p class="staff-title">
+      <%=raw item.title %>
+    </p>
+  </div><!--/span11-->
+  </div><!--/row-fluid staff-header-->
+
+
+  <div class="row-fluid staff-container">
+  <div class="span3 staff-picture photo-boxedNOT">    
+    <%#= image_fu item.image, nil %>
+    <% if item.image %>
+      <img src="<%= item.image.url %>" class="photo-boxed" />
+    <% end %>
+  </div><!--/span-->
+  <div class="span9">
+    <p>
+      <%=raw item.bio %>
+    </p>
+  </div><!--/span-->
+  </div><!--/row-fluid-->
+
+  <div class="row-fluid">
+  <div class="span12">
+  </div><!--/span-->
+  </div><!--/row-fluid-->
+
+  </div><!--/span-->
+  </div><!--/row-fluid-->
+
+

@@ -1,0 +1,53 @@
+
+<% if @page.images.first != nil %>
+
+	<% if @page.content_for(:image_links) != nil %>
+	  <% links = strip_tags(@page.content_for(:image_links)).split(' ') %>
+	<% else %>
+	  <% links = [] %>
+	<% end %>
+
+     	  <div class="row-fluid">        
+	    <div class="span1">
+            </div><!--/span -->
+    	  </div><!--row-->
+
+	  <div class="row-fluid">
+
+	  <% @page.images.each_with_index do |image, index| %>
+	  <% @index = index %>
+
+
+		<div class="span4">
+		  <% if links[index] != nil %>
+		    <% link = links[index] %>
+		  <% else %>
+		    <% link = "#" %>
+		  <% end %>
+	    	    <%= image_tag image.url, :class => "photo-boxed", :size => "250x250" %>
+		    <span class="caption"><%= raw @page.caption_for_image_index(index) %></span>
+		</div><!--/span-->
+
+		<% if ((index + 1) % 3 == 0) %>
+	  	  </div><!--/row-fluid-->
+     		  <div class="row-fluid">        
+		    <div class="span1">
+        	    </div><!--/span -->
+    		  </div><!--row-->
+	  	  <div class="row-fluid">
+		  <% next %>
+		<% end %>
+
+	  <% end %>
+
+	<% if ((@index + 1) % 3 != 0) %>
+	  </div><!--/row-fluid-->
+     	  <div class="row-fluid">        
+	    <div class="span1">
+            </div><!--/span -->
+    	  </div><!--row-->
+	<% else %>
+    	  </div><!--row-->
+	<% end %>
+
+<% end %>

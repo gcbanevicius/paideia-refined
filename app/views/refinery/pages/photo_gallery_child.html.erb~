@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+
+     <div class="row-fluid">        
+	<div class="span1">
+        </div><!--/span -->
+	<div class="span10">
+
+     <div class="row-fluid">        
+	<div class="span1">
+        </div><!--/span -->
+    </div><!--row-->
+
+<%#=============== begin 2013 block =================== %>
+	    
+	<% count = -1%>
+
+	  <h2><%= @page.title %>, 2013</h2>
+	  <div class="row-fluid">
+
+	  <% if @images_2013.empty? %>
+	    </div><!--/row-->
+	  
+	  <% else %>
+
+	  <% @images_2013.each_with_index do |image, index| %>
+	  <% count = count + 1 %>
+
+		<div class="span3">
+                  <a class="thumbnail" rel="prettyPhoto[2013_gal]" href="<%= image.url %>" >
+	    	    <%= image_tag image.thumbnail('175x175').url %>
+		  </a>
+		    <span class="caption"><%= raw @page.caption_for_image_index(index) %></span>
+		</div><!--/span-->
+
+		<% if ((count + 1) % 4 == 0) %>
+	  	  </div><!--/row-fluid-->
+     		  <div class="row-fluid">        
+		    <div class="span1">
+        	    </div><!--/span -->
+    		  </div><!--row-->
+	  	  <div class="row-fluid">
+		  <% next %>
+		<% end %>
+
+	  <% end %>
+
+		<% if ((count + 1) % 4 != 0) %>
+	  	  </div><!--/row-fluid-->
+     		  <div class="row-fluid">        
+		    <div class="span1">
+        	    </div><!--/span -->
+    		  </div><!--row-->
+		<% end %>
+
+	  <% end%>
+
+<%#================= end 2013 block =================== %>
+
+
+<%#=============== begin 2012 block =================== %>
+	    
+	<% count = -1%>
+
+	  <h2><%= @page.title %>, 2012</h2>
+	  <div class="row-fluid">
+
+	  <% if @images_2012.empty? %>	  
+	    </div><!--/row-->
+	  
+	  <% else %>
+
+	  <% @images_2012.each_with_index do |image, index| %>
+	  <% count = count + 1 %>
+
+		<div class="span3">
+                  <a class="thumbnail" rel="prettyPhoto[2012_gal]" href="<%= image.url %>" >
+	    	    <%= image_tag image.thumbnail('175x175').url %>
+		  </a>
+		    <span class="caption"><%= raw @page.caption_for_image_index(index) %></span>
+		</div><!--/span-->
+
+		<% if ((count + 1) % 4 == 0) %>
+	  	  </div><!--/row-fluid-->
+     		  <div class="row-fluid">        
+		    <div class="span1">
+        	    </div><!--/span -->
+    		  </div><!--row-->
+	  	  <div class="row-fluid">
+		  <% next %>
+		<% end %>
+
+	  <% end %>
+
+		<% if ((count + 1) % 4 != 0) %>
+	  	  </div><!--/row-fluid-->
+     		  <div class="row-fluid">        
+		    <div class="span1">
+        	    </div><!--/span -->
+    		  </div><!--row-->
+		<% end %>
+
+	  <% end%>
+
+<%#================= end 2012 block =================== %>
+
+
+<%#=============== begin 2011 block =================== %>
+	    
+	<% count = -1%>
+
+	  <h2><%= @page.title %>, 2011</h2>
+	  <div class="row-fluid">
+
+	  <% if @images_2011.empty? %>
+	    </div><!--/row-->
+	  
+	  <% else %>
+
+	  <% @images_2011.each_with_index do |image, index| %>
+	  <% count = count + 1 %>
+
+		<div class="span3">
+                  <a class="thumbnail" rel="prettyPhoto[2011_gal]" href="<%= image.url %>" >
+	    	    <%= image_tag image.thumbnail('175x175').url %>
+		  </a>
+		    <span class="caption">
+<%= raw @page.caption_for_image_index(index) %>
+</span>
+		</div><!--/span-->
+
+		<% if ((count + 1) % 4 == 0) %>
+	  	  </div><!--/row-fluid-->
+     		  <div class="row-fluid">        
+		    <div class="span1">
+        	    </div><!--/span -->
+    		  </div><!--row-->
+	  	  <div class="row-fluid">
+		  <% next %>
+		<% end %>
+
+	  <% end %>
+
+		<% if ((count + 1) % 4 != 0) %>
+	  	  </div><!--/row-fluid-->
+     		  <div class="row-fluid">        
+		    <div class="span1">
+        	    </div><!--/span -->
+    		  </div><!--row-->
+		<% end %>
+
+	  <% end%>
+
+<%#================= end 2011 block =================== %>
+
+
+	</div>
+	<div class="span1">
+        </div><!--/span -->
+    </div><!--row-->
+
+</html>

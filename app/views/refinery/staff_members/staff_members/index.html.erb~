@@ -1,0 +1,78 @@
+<% content_for :body do %>
+
+  <div class="row-fluid">
+
+  <div class="span3 left-banner banner hidden-phone">
+
+    <ul class="nav nav-list">
+    <% parent_page = @page.parent %>
+    <% parent_page ||= @page %>
+    <% parent_link = refinery.url_for(parent_page.url) %>
+      <% act_class = "active" if current_page?(parent_link) %>
+      <% act_class ||= "" %>
+      <li class="nav-header <%= act_class %>"><a href="<%= parent_link %>"><%= parent_page.title %></a></li>
+      <% parent_page.children.each_with_index do |child, index| %>
+	<% page_link = refinery.url_for(child.url) %>
+        <li class="divider"></li>
+	<% if current_page?(page_link) %>
+          <li class="active"><a href="<%= page_link %>"><%= child.title %></a></li>
+	<% elsif child.in_menu? %>
+          <li><a href="<%= page_link %>"><%= child.title %></a></li>
+	<% end %>
+      <% end %>
+   
+    </ul>
+
+        </div><!--/span -->
+
+
+<div class="span8 banner">
+<div class="row-fluid"><div class="span12"></div></div>
+<div class="row-fluid">
+<div class="span12">
+
+
+
+    <% @staff_members.each_with_index do |staff_member, index| %>
+	  <% @index = index %>
+        
+	<%#= link_to staff_member.name, refinery.staff_members_staff_member_path(staff_member) %>
+	<%= render :partial => "showimage", :locals => {:item => staff_member} %>
+
+		<% if ((index + 1) % 2 == 0) %>
+	  	  </div><!--/row-fluid-->
+     		  <div class="row-fluid">        
+		    <div class="span1">
+        	    </div><!--/span -->
+    		  </div><!--row-->
+	  	  <div class="row-fluid">
+		  <% next %>
+		<% end %>
+
+	  <% end %>
+
+	<% if ((@index + 1) % 2 == 1) %>
+	  </div><!--/row-fluid-->
+     	  <div class="row-fluid">        
+	    <div class="span1">
+            </div><!--/span -->
+    	  </div><!--row-->
+	<% else %>
+    	  </div><!--row-->
+	<% end %> 
+
+</div>
+</div>
+</div>
+
+<div class="row-fluid">        
+<div class="span12">
+	<%= render :partial => "paginate" %>
+
+<% end %>
+  </div><!--/span -->
+</div><!--row-fluid-->
+
+
+<%= render '/refinery/content_page', :hide_sections => :body_content_title %>
+

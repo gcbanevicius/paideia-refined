@@ -1,0 +1,26 @@
+<div class="row-fluid">        
+	
+  <div class="span1">
+  </div><!--/span-->
+
+  <div class="span10">
+  
+  <h1>Webinar#show</h1>
+  <h2>Webinars:</h2> 
+
+  <%= @webinarsx.length %>
+  <% @webinarsx.each do |webinarx| %>
+    <p><%= webinarx.title %></p>
+  
+    <% if webinarx.webinar_users.each do | user | %>
+      <p>This user is: <%= user.username.to_s %></p>
+    <% end %>
+    <% end %>
+    <p>------------------------------------------------------------</p>
+
+  <% end %>  
+  
+  </div><!--/span-->
+  
+</div><!--/row-->
+

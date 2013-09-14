@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<div class="row-fluid">        
+  <div class="span12">
+  </div><!--/span -->
+</div><!--row-fluid-->
+
+     <div class="row-fluid">        
+
+	<div class="span12">
+	  <%= raw @page.content_for(:body) %>
+	</div>
+
+    </div><!--row-->
+
+    <div class="row-fluid">	
+
+
+
+	<div class="span6">
+
+<div class="row-fluid">        
+  <div class="span12">
+  </div><!--/span -->
+</div><!--row-fluid-->
+
+	  <%= raw @page.content_for(:split_body) %>
+	</div><!--span-->
+
+	<div class="span6">
+
+<div class="row-fluid">        
+  <div class="span12">
+  </div><!--/span -->
+</div><!--row-fluid-->
+
+	<ul class="thumbnails">
+	  <% min_cnt = [4, @page.images.length].min %>
+	  <% min_cnt.times do |i| %>
+	    <% image = @page.images[i] %>
+      <li>
+        <a class="thumbnail" rel="prettyPhoto[gal]" href="<%= image.url %>" >
+	      <%= image_tag image.thumbnail('200x200').url %>
+		    </a>
+		  </li>
+	  <% end %>
+	</ul>
+	</div><!--span-->
+
+
+
+    </div><!--row-->
+
+     <div class="row-fluid">        
+
+	<div class="span12">
+	  <%= raw @page.content_for(:lower_body) %>
+	</div>
+
+    </div><!--row-->
+    
+    
+     <div class="row-fluid">        
+
+	<div class="span12">
+	<ul class="thumbnails">
+	  <% i = 4 %>
+	  <% while i < @page.images.length do %>
+	    <% image = @page.images[i] %>
+      <li>
+        <a class="" rel="prettyPhoto[gal]" href="<%= image.url %>" >
+	      <%= image_tag image.thumbnail('200x200').url, :class=> "thumbnail" %>
+		    </a>
+		  </li>
+		  <% i = i+1 %>
+	  <% end %>
+	</ul>
+	</div>
+
+    </div><!--row-->
+
+</html>

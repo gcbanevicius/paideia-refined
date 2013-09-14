@@ -1,0 +1,50 @@
+<% content_for :body do %>
+
+
+
+  <div class="row-fluid staff-header">
+  <div class="span1">
+    <p>
+      <%= image_fu item.thumbnail, nil %>
+    </p>
+  </div><!--/span-->
+  <div class="span11">
+    <p>
+      <h2><%=raw item.name %></h2>
+    </p>
+    <p>
+      <%=raw item.title %>
+    </p>
+  </div><!--/span-->
+  </div><!--/row-fluid-->
+
+
+  <div class="row-fluid staff-container">
+  <div class="span3">
+    <%= image_fu item.image, nil %>
+  </div><!--/span-->
+  <div class="span9">
+    <p>
+      <%=raw item.bio %>
+    </p>
+  </div><!--/span-->
+  </div><!--/row-fluid-->
+
+
+
+<% end %>
+
+<% content_for :side_body do %>
+  <aside>
+    <h4><%= t('.other') %></h4>
+    <ul id="staff_members">
+      <% @staff_members.each do |staff_member| %>
+        <li>
+          <%= link_to staff_member.name, refinery.staff_members_staff_member_path(staff_member) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render '/refinery/content_page' %>

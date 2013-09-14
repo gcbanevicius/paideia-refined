@@ -1,0 +1,54 @@
+<%= form_for [refinery, :testimonials_admin, @testimonial] do |f| -%>
+  <%= render '/refinery/admin/error_messages',
+              :object => @testimonial,
+              :include_object_name => true %>
+
+  <div class='field'>
+    <%= f.label :program -%>
+    <%= f.text_field :program, :class => 'larger widest' -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :year -%>
+    <%= f.text_field :year -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :name -%>
+    <%= f.text_field :name -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :institution -%>
+    <%= f.text_field :institution -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :picture -%>
+    <%= render '/refinery/admin/image_picker',
+               :f => f,
+               :field => :picture_id,
+               :image => @testimonial.picture,
+               :toggle_image_display => false -%>
+  </div>
+
+  <div class='field'>
+    <%= render '/refinery/admin/wysiwyg',
+                :f => f,
+                :fields => [:content],
+                :object => "testimonials/testimonial" -%>
+  </div>
+
+  <%= render '/refinery/admin/form_actions', :f => f,
+             :continue_editing => false,
+             :delete_title => t('delete', :scope => 'refinery.testimonials.admin.testimonials.testimonial'),
+             :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @testimonial.program) -%>
+<% end -%>
+
+<% content_for :javascripts do -%>
+  <script>
+    $(document).ready(function(){
+      page_options.init(false, '', '');
+    });
+  </script>
+<% end -%>

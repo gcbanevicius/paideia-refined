@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+
+    <ul class="nav nav-list">
+    <% parent_page = @page.parent %>
+    <% parent_page ||= @page %>
+    <% parent_link = refinery.url_for(parent_page.url) %>
+      <% act_class = "active" if current_page?(parent_link) %>
+      <% act_class ||= "" %>
+      <li class="nav-header <%= act_class %>"><a href="<%= parent_link %>"><%= parent_page.title %></a></li>>
+
+
+    </ul>
+
+
+</html>

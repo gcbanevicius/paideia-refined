@@ -1,0 +1,49 @@
+     <div class="row-fluid">        
+	<div class="span1">
+        </div><!--/span -->
+	<div class="span10">
+
+     <div class="row-fluid">        
+	<div class="span1">
+        </div><!--/span -->
+    </div><!--row-->
+
+
+	  <div class="row-fluid">
+
+	  <% @page.images.each_with_index do |image, index| %>
+	  <% @index = index %>
+
+		<div class="span6">
+	    	    <%= image_tag image.url, :class => "photo-boxed", :size => "350x350" %>
+		    <span class="caption"><%= raw @page.caption_for_image_index(index) %></span>
+		</div><!--/span-->
+
+		<% if ((index + 1) % 2 == 0) %>
+	  	  </div><!--/row-fluid-->
+     		  <div class="row-fluid">        
+		    <div class="span1">
+        	    </div><!--/span -->
+    		  </div><!--row-->
+	  	  <div class="row-fluid">
+		  <% next %>
+		<% end %>
+
+	  <% end %>
+
+	<% if ((@index + 1) % 2 == 1) %>
+	  </div><!--/row-fluid-->
+     	  <div class="row-fluid">        
+	    <div class="span1">
+            </div><!--/span -->
+    	  </div><!--row-->
+	<% else %>
+    	  </div><!--row-->
+	<% end %>
+
+	</div>
+	<div class="span1">
+        </div><!--/span -->
+    </div><!--row-->
+
+

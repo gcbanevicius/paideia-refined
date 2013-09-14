@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+
+<!--########################### CAROUSEL ##############################-->
+
+	<% content_for :carousel do %>
+
+        <div class="row-fluid carousel-row"><!--wrapper row-->
+
+	<div class="span1">
+	</div>
+
+        <div class="span10 carousel-span"><!--wrapper span-->
+
+	    <div id="main_carousel" class="carousel slide">
+
+	      <ol class="carousel-indicators">
+		<li id="first_carousel_indicator" data-target="#main_carousel" data-slide-to="0" class="active"></li>
+		<% len = Refinery::CarouselImages::CarouselImage.all.length %>
+		<% i = 1 %>
+		<% while (len > i) do %>
+		  <li data-target="#main_carousel" data-slide-to="<%= i %>"></li>
+		  <% i = i + 1 %>
+		<% end %>
+	      </ol>
+
+
+	      <div class="carousel-inner">
+
+	      <% Refinery::CarouselImages::CarouselImage.all.each_with_index do |item, index| %>
+	      <% if (index == 0) %>
+	        <div class="item active"><a href="<%= item.link %>"><%= image_tag item.image.url if item.image != nil %></a>
+	      <% else %>
+	        <div class="item"><a href="<%= item.link %>"><%= image_tag item.image.url if item.image != nil %></a>
+	      <% end %>
+		  <div class="carousel-caption">
+		    <a href="<%= item.link %>"><h4><%= item.title if item.title != nil %></h4></a>
+		    <p><%= raw item.caption if item.caption != nil %></p>
+		  </div>
+	        </div>
+	      <% end %>
+
+	      </div><!-- carousel-inner -->
+
+<!--	      <a class="left carousel-control" href="#main_carousel" data-slide="prev">&lsaquo;</a>-->
+<!--	      <a class="right carousel-control" href="#main_carousel" data-slide="next">&rsaquo;</a>-->
+	    </div><!-- main_carousel -->
+
+
+        </div><!--/wrapper span-->
+
+	<div class="span1">
+	</div>
+
+      </div><!--/wrapper row-->
+
+      <% end %>
+
+
+<!--#################### HOME LEAD ######################################-->
+	
+	<% content_for :home_lead do %>
+	<div class="row-fluid">
+        <div class="span1">
+        </div><!--/span -->
+        <div class="span10 home-page-subcontent">
+
+	  <%= raw @page.content_for(:body_lead) %>
+
+        </div><!--/span -->
+	
+	<div class="row-fluid">
+	  <div class="span12">
+	    <hr class="horz-divider">
+	  </div><!--/span-->
+	</div><!--/row-fluid-->
+
+
+	<% end %>
+
+
+
+<!--############################## HOME ###################################-->
+
+
+	  <div class="row-fluid row-bottom">
+	  <div class="span12 content-bottoms content-bottom-lefts">
+
+	    <%= raw @page.content_for(:body_mid_left) %>
+
+	    <%= render :partial => "home_mid_left" %>	
+
+	  </div>
+
+	  <div class="span6 content-bottom content-bottom-right">
+
+	    <%= raw @page.content_for(:body_mid_right) %>
+
+		<div class="row-fluid">
+		  <div class="span1">	
+		  </div>
+		</div><!--/row-->
+
+		<div class="row-fluid">
+		  <div class="span1">	
+		  </div>		
+
+		  <div class="span4">		
+		  <a href="/contact" class="btn btn-info btn-home">Request an Application</a>
+		  </div>	
+	
+		  <div class="span2">	
+		  </div>		
+
+		  <div class="span4">		
+		  <a href="/get-involved/collaborate" class="btn btn-info btn-home">Work with Paideia</a>
+		  </div>	
+
+		</div><!--/row-->
+
+		<div class="row-fluid">
+		  <div class="span1">	
+		  </div>
+		</div><!--/row-->
+
+		<div class="row-fluid">
+		  <div class="span1">	
+		  </div>		
+
+		  <div class="span4">		
+		  <a href="/get-involved/support" class="btn btn-info btn-home">Support Paideia</a>
+		  </div>	
+	
+		  <div class="span2">	
+		  </div>		
+
+		  <div class="span4">		
+		  <a href="/contact" class="btn btn-info btn-home">Other Inquiries</a>
+		  </div>	
+
+		</div><!--/row-->
+
+
+	  </div>
+
+
+
+	  </div><!--/row-fluid-->
+
+	<div class="row-fluid">
+	  <div class="span12">
+	    <hr class="horz-divider">
+	  </div><!--/span-->
+	</div><!--/row-fluid-->
+
+	<div class="row-fluid">
+	  <div class="span12">
+	  </div><!--/span-->
+	</div><!--/row-fluid-->
+
+	<div class="row-fluid">
+	  <div class="span1">	
+	  </div><!--/span-->
+
+	  <div class="span5">
+	    <%= raw @page.content_for(:body_lower_left) %>
+	  </div><!--/span-->
+
+	  <div class="span5">
+	    <%= raw @page.content_for(:body_lower_right) %>
+	  </div><!--/span-->
+
+	  <div class="span1">
+	  </div><!--/span-->
+	</div><!--/row-fluid-->
+
+	<div class="row-fluid">
+	  <div class="span12">
+	  </div><!--/span-->
+	</div><!--/row-fluid-->
+
+
+</html>
+

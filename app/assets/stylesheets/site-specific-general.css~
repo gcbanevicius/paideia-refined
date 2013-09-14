@@ -1,0 +1,258 @@
+/*###############  GENERAL ######################*/
+
+a {
+  color: #000;
+  font-family: "Julius Sans One",sans-serif;
+}
+
+p {
+  text-align: justify;
+}
+
+body {
+  font-family: "Average", Helvetica, sans-serif;
+}
+
+p {
+
+}
+
+header {
+/*  text-align: center;*/
+}
+
+footer {
+  margin-top: 20px;
+  margin-left: 25px;
+  margin-bottom: 15px;  
+  margin-right: 100px;
+}
+
+footer h3 a {
+  float: right;
+  margin-right: 10px;
+}
+
+/* contact us address */
+h5 {
+    font-size: 18px;
+    text-align: center;
+} 
+
+
+
+/* inquiry text field width */
+input, textarea, .uneditable-input {
+  width: 300px;
+}
+
+/* inquiry message width */
+textarea#inquiry_message {
+  width: 650px;
+}
+
+#main-content {
+  background-color: #fff;
+}
+
+
+.photo-boxed {
+  border: 1px solid rgb(82, 151, 203);
+  padding: 3px;
+  border-radius: 8px 8px 8px 8px;
+}
+
+.image-float-left {
+  float: left;
+  margin-right: 25px;
+  margin-bottom: 15px;
+}
+
+.image-float-right {
+  float: right;
+  margin-left: 25px;
+  margin-bottom: 15px;
+}
+
+.large-image-float-right {
+  float: right;
+  margin-left: 35px;
+  margin-bottom: 15px;
+}
+
+.container-fluid {
+  padding-left:0;
+  padding-right:0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #5297CB;
+  font-weight: normal;
+}
+
+h1 {
+  font-family: "Marcellus SC", sans-serif;
+}
+
+h2, h3, h4, h5, h6 {
+  font-family: "Julius Sans One", sans-serif;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+/*credit to http://css-tricks.com/examples/hrs/*/
+.horz-divider {
+  border: 0; 
+  height: 1px; 
+  background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+  background-image: -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+  background-image: -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+  background-image: -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
+}
+
+
+
+/*########################### HOME PAGE ##################################*/
+
+.home-page-subcontent {
+  min-height: 200px;
+  padding: 25px;
+}
+
+.home-page-header {
+  text-align: center;
+}
+
+.program-list {
+  list-style: none;
+}
+
+.program-row {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.program-row > .span4 > img {
+  border: 1px solid #5297CB;
+  padding: 3px;
+  border-radius: 8px;
+}
+
+.program-row > .span8 > p {
+  margin-top: 20px;
+}
+
+.content-bottom > h4 {
+  text-align: center;
+}
+
+.content-bottom {
+  padding: 25px;
+/*  background-color: #E0E0D7;*/
+  width: 50% !important;
+}
+
+.content-bottom-right {
+  margin-left: 0px !important;
+/*  border-left: 1px solid #000;*/
+}
+
+.content-bottom-left {
+    border-right: 1px solid #000;
+}
+
+.row-bottom {
+  margin-left: auto;
+  margin-right: auto;
+  width: 95%;
+}
+
+.btn-home {
+  min-width: 150px;
+  min-height: 40px;
+  padding-top: 15px;
+}
+
+/*######################### LEFT BANNER ##########################*/
+
+
+.left-banner {
+  margin-top: 20px;
+  background-color: #e9f4f8;
+  font-size: 20px;
+}
+
+.left-banner .nav-header {
+  font-size: 24px;
+}
+
+.left-banner > .nav-list > li {
+}
+
+.left-banner > .nav-list > li.divider {
+  padding: 0;
+  margin: 0 1px;
+}
+
+.left-banner > .nav-list > li > a {
+  padding: 20px 15px;
+}
+
+.left-banner > .nav-list > li > a:hover,
+.left-banner > .nav-list > li > a:focus {
+  background-color: #D4D4D4; 
+/*  #C1C1AF;*/
+}
+
+/* thanks to (http://www.cssnewbie.com/equal-height-columns-with-jquery/#.Uea4ieH7sYw) */
+/*    for the  magic of equal height cols! */
+.banner {
+  min-height: 450px !important;
+}
+
+
+/*######################################## STAFF PAGE #################################*/
+
+.staff-header {
+  background-image: url('tweed.png');
+}
+
+.staff-title {
+  color: #5297CB;
+  font-size: 20px;
+  text-align: left;
+}
+	
+.staff-thumbnail {
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.staff-picture {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+
+
+
+
+/*##################################### HERO UNIT ##################################*/
+
+.hero-unit {
+    padding: 0px;
+    margin-bottom: 30px;
+    height: 285px;
+}
+
+.hero-unit h2, .hero-unit h3 {
+    text-align: center;
+}
+
+.hero-unit h2 {
+    font-size: 26px;
+}
+
+

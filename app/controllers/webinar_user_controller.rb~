@@ -1,0 +1,54 @@
+class WebinarUserController < ApplicationController
+  def new
+    @webinar_user = WebinarUser.new
+  end
+  
+  def create
+    @webinar_user = WebinarUser.new(params[:webinar_user])
+#    if request.post?
+      if @webinar_user.save
+        #session[:webinar_user] = WebinarUser.authenticate(@user.username, @user.password)
+        flash[:notice] = "You've successfully signed up for our webinar series"
+        redirect_to "/webinar"
+      else
+        flash[:notice] = "Signup unsuccessful"
+        redirect_to :action => "new"
+      end
+#    end
+  end
+  
+  def login
+    authorized_user = WebinarUser.authenticate(params[:username], params[:password])
+    if authorized_user
+      flash[:notice] = "Nice, you're in!"
+      redirect_to "/oldwebinar"
+    else
+      flash[:notice] = "Sorry bad credentials"
+    end
+    
+    
+    #if request.post?
+    #  if session[:user] = WebinarUser.authenticate(params[:user][:username], params[:user][:password])
+    #    flash[:message] = "Login successful"
+    #    redirect_to_stored
+    #  else
+    #    flash[:warning] = "Login unsuccessful"
+    #  end
+    #end
+  end
+
+  def logout
+    session[:webinar_user] = nil
+    flash[:message] = "Logged out"
+    redirect_to :action => "login"
+  end
+
+  def delete
+  end
+
+  def edit
+  end
+
+  def forgot_password
+  end
+end

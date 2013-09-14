@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "The Paideia Institute" %></title>
+    <%= csrf_meta_tags %>
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js" type="text/javascript"></script>
+<![endif]-->
+
+    <%= stylesheet_link_tag "application", :media => "all" %>
+
+    <!-- For third-generation iPad with high-resolution Retina display: -->
+    <!-- Size should be 144 x 144 pixels -->
+    <%= favicon_link_tag 'apple-touch-icon-144x144-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144' %>
+
+    <!-- For iPhone with high-resolution Retina display: -->
+    <!-- Size should be 114 x 114 pixels -->
+    <%= favicon_link_tag 'apple-touch-icon-114x114-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '114x114' %>
+
+    <!-- For first- and second-generation iPad: -->
+    <!-- Size should be 72 x 72 pixels -->
+    <%= favicon_link_tag 'apple-touch-icon-72x72-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '72x72' %>
+
+    <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+    <!-- Size should be 57 x 57 pixels -->
+    <%= favicon_link_tag 'apple-touch-icon-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png' %>
+
+    <!-- For all other devices -->
+    <!-- Size should be 32 x 32 pixels -->
+    <%= favicon_link_tag '/public/favicon.ico', :rel => 'shortcut icon' %>
+
+    <link href='http://fonts.googleapis.com/css?family=Average' rel='stylesheet' type='text/css'>
+
+    <%= stylesheet_link_tag "prettyPhoto.css" %>
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Marcellus+SC|Julius+Sans+One">
+
+  </head>
+  <body class="hidden-phones hidden-tablets">
+
+    <div class="container-fluid">
+<header>
+<div class="row-fluid header-row"><div class="span12">
+      <a href="/home"><%= image_tag "paideiaheader.svg" %></a>
+</div><!--/span--></div><!--/row-fluid-->
+
+<div class="row-fluid nav-row">
+
+
+<div class="span12 nav-span">
+
+    <div class="navbar">
+      <div class="navbar-inner">
+
+<div class="span12 colorbar"></div>
+
+        <div class="container">
+
+
+    <%= render(:partial => "/refinery/shared/menu", :locals => {
+                 :dom_id => 'menu',
+                 :css => 'menu'
+               }) %>
+        </div>
+      </div>
+    </div>  
+
+</div><!--/span12-->
+</div><!--/row-fluid-->
+</header>       
+      <%#= bootstrap_flash %>
+ 
+      <% if (current_page?("/home/index") || current_page?("/")) %>
+          <%= yield :carousel %>
+      <% end %>
+
+
+<% if !(@page.title == "Home")%>
+            	
+<div class="row-fluid">
+  <div class="span1 hidden-phone">
+  </div>
+  <div class="span10" id="main-content"><!-- wrap it all in a span to center-->
+
+	  <% if (@page && (@page.title=="Staff Members")) %>
+	    <%#= stylesheet_link_tag "test" %>
+	    <%= render "/refinery/staff_members/staff_members/index" %>
+	    <%= yield :body %>
+          <% else %>
+	    <%= yield %>
+	  <% end %>
+
+	  <% if (@page && @page.title=="Gov") %>
+	    <%#= render "/shared/content_page" %>
+	  <% end %>
+
+          <%#= yield :home_lead %>
+
+
+
+
+          
+  </div><!--span10-->
+</div><!--/row-fluid-->
+<% end %>
+      <footer>
+        <h3>&copy; 2013 The Paideia Institute for Humanistic Study, Inc. All rights reserved <%= image_tag "face-blue.png" %> <a href="http://flickr.com/photos/paideiainstitute/sets"><%= image_tag "flickr.png" %></a> <a href="http://facebook.com/the.paideia.institute"><%= image_tag "facebook.png" %></a></h3> 
+      </footer>
+
+
+      
+    </div> <!-- /container -->
+
+
+
+    <!-- Javascripts
+================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <%= javascript_include_tag "application" %>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+
+    <script src="/assets/js/jquery.prettyPhoto.js"></script>
+
+<script type="text/javascript" charset="utf-8">
+
+function equalHeight(group) {
+   tallest = 0;
+   group.each(function() {
+      thisHeight = $(this).height();
+      if(thisHeight > tallest) {
+         tallest = thisHeight;
+      }
+   });
+   group.height(tallest);
+}
+
+$(document).ready(function() {
+	equalHeight($(".banner"));
+});
+
+
+
+$(document).ready(function() {
+	$("#first_carousel_indicator").click();
+});
+
+$(document).ready(function(){
+        $("a[rel^='prettyPhoto']").prettyPhoto({slideshow:5000, autoplay_slideshow:true, theme: 'pp_default', social_tools: false, allow_resize: false, default_width: 200, default_height: 200 })
+});
+
+
+$(document).ready(function() { $('.carousel').carousel({ interval: 10000, cycle: true }) });
+
+
+$(document).ready(function(){
+	$('.dropdown-toggle').hover(function(){
+		$('.dropdown-toggle').dropdown()
+	});	
+});
+
+</script>
+
+
+
+  </body>
+</html>

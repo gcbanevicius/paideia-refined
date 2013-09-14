@@ -1,0 +1,19 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+  <head>
+    <meta name="generator" content=
+    "HTML Tidy for Linux (vers 25 March 2009), see www.w3.org">
+    <title></title>
+  </head>
+  <body>
+    <div class="row-fluid">
+      <div class="span12"></div><!--/span -->
+    </div><!--row-fluid-->
+    <div class="row-fluid">
+      <div class="span12">
+        <%#= render '/refinery/content_page' %>
+        <%= raw @page.content_for(:body) %>
+      </div><!--/span-->
+    </div><!--/row-->
+  </body>
+</html>

@@ -1,0 +1,36 @@
+class User < ::ApplicationController
+  protect_from_forgery
+  
+  def self.randomize_string(len)
+    # results in a random string, useful for salting passwords  
+    chars = ("0".."9").to_a + ("a".."z").to_a + ("A".."Z").to_a
+    mypass = ""
+    len.times do |i|
+      mypass << chars[rand(chars.size-1)]
+    end
+    return mypass
+  end  
+  
+  def password=(mypass)
+    @password = mypass
+    self.salt = User.randomize_string(10) if !self.salting
+    self.hashed_password = User.encrypt(@password, self.salt)
+  end
+  
+  def self.encrypt(password, salt)
+    Digest::SHA1.hexdigest(mypass+salt)
+  end
+  
+  def self.authenticate(username, password)
+    u = find(:first, :conditions => ["username = ?", username])
+    return nil if user.nil?
+    return u if User.encrypt(password, u.salt) == u.hashed_password
+    nil
+  end
+  
+  def new_password
+    newpass = User.randomize_string(10)
+    self.password = self.password_confirmation = newpass
+    self.save
+    Notifications.deliver_forgot_password(self.email, self.username, newpass)
+end

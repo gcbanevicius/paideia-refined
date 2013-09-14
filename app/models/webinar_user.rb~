@@ -1,0 +1,61 @@
+require 'digest/sha1'
+require 'action_mailer'
+
+
+class WebinarUser < ActiveRecord::Base
+
+  has_and_belongs_to_many :webinars
+  
+  #validates_length_of :username, :within => 3..25
+  #validates_length_of :password, :within => 8..25
+  validates_presence_of :username, :email, :email_confirmation, :password, :password_confirmation, :salt
+  #validates_uniqueness_of :username, :email
+  validates_confirmation_of :email, :password
+  validates_format_of :email, :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i, :message => "Invalid email"
+  
+  attr_protected :id, :salt, :hashed_password
+  
+  #attr_accessible :username, :home_institute, :email, :name
+  
+  attr_accessor :password, :password_confirmation
+
+  def self.randomize_string(len)
+    # results in a random string, useful for salting passwords  
+    chars = ("0".."9").to_a + ("a".."z").to_a + ("A".."Z").to_a
+    mypass = ""
+    len.times do |i|
+      mypass << chars[rand(chars.size-1)]
+    end
+    return mypass
+  end  
+  
+  def password=(mypass)
+    @password = mypass
+    if !self.salt? then self.salt = WebinarUser.randomize_string(10) end
+    self.hashed_password = WebinarUser.encrypt(@password, self.salt)
+  end
+  
+  def self.encrypt(mypass, salt)
+    Digest::SHA1.hexdigest(mypass+salt)
+  end
+  
+  def self.authenticate(username, password)
+    user = WebinarUser.find_by_username(username) #find(:first, :conditions => ["username = ?", username])
+    if user.nil? then 
+      return nil 
+    end
+    if WebinarUser.encrypt(password, user.salt) == user.hashed_password then 
+      return user 
+    end
+    nil
+  end
+  
+  def new_password
+    newpass = WebinarUser.randomize_string(10)
+    self.password = self.password_confirmation = newpass
+    self.save
+    #ActiveSupport::Notifications.deliver_forgot_password(self.email, self.username, newpass)
+    return self.password 
+  end
+
+end

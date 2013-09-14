@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+  <head>
+    <meta name="generator" content=
+    "HTML Tidy for Linux (vers 25 March 2009), see www.w3.org">
+    <title></title>
+  </head>
+  <body>
+    <div class="row-fluid">
+      
+      <div class="span12"></div><!--/span -->
+    </div><!--row-->
+    <div class="row-fluid">
+      <div class="span12">
+        <%= raw @page.content_for(:body) %>
+      </div><!--span-->
+    </div><!--row-->
+    <div class="row-fluid">
+      <div class="span12">
+        <%= raw @page.content_for(:split_body) %>
+      </div><!--span-->
+    </div><!--row-->
+    <div class="row-fluid">
+      <div class="span12">
+        <%= raw @page.content_for(:lower_body_one) %>
+      </div>
+    </div><!--row-->
+    <div class="row-fluid hidden-phone">
+      <div class="span12">
+        <ul class="thumbnails">
+          <% @page.images.each do |image |%>
+          <li>
+            <a class="thumbnail" rel="prettyPhoto[gal]" href=
+            "<%= image.url %>"><%= image_tag image.thumbnail('200x200').url %></a>
+          </li><% end %>
+        </ul>
+      </div><!--span-->
+    </div><!--row-->
+    <div class="row-fluid">
+      <div class="span12">
+        <%= raw @page.content_for(:lower_body_two) %>
+      </div><!--span-->
+    </div><!--row-->
+  </body>
+</html>

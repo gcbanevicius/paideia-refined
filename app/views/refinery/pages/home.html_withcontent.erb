@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!--############################ CAROUSEL ##############################-->
+<% content_for :carousel do %>
+<html>
+  <head>
+    <meta name="generator" content=
+    "HTML Tidy for Linux (vers 25 March 2009), see www.w3.org">
+    <title></title>
+  </head>
+  <body>
+
+    <div class="row-fluid carousel-row">
+      <!--wrapper row-->
+      <div class="span1 hidden-phone"></div>
+      <div class="span10 carousel-span">
+        <!--wrapper span-->
+        <div id="main_carousel" class="carousel slide">
+          <ol class="carousel-indicators">
+            <li id="first_carousel_indicator" data-target="#main_carousel"
+            data-slide-to="0" class="active">
+            </li>
+            <% len = Refinery::CarouselImages::CarouselImage.all.length %>
+            <% i = 1 %>
+            <% while (len > i) do %>
+		  			  <li data-target="#main_carousel" data-slide-to="<%= i %>"></li>
+              <% i = i + 1 %>
+            <% end %>
+          </ol>
+          <div class="carousel-inner">
+            <% Refinery::CarouselImages::CarouselImage.all.each_with_index do |item, index| %>
+              <% if (index == 0) %>
+                <div class="item active">
+                  <a href="<%= item.link %>"><%= image_tag item.image.url if item.image != nil %></a>
+              <% else %>
+                <div class="item">
+                  <a href="<%= item.link %>"><%= image_tag item.image.url if item.image != nil %></a>
+              <% end %>
+                <div class="carousel-caption">
+                  <h4>
+                    <a href="<%= item.link %>">
+                    <%= item.title if item.title != nil %></a>
+                  </h4>
+                  <p>
+                    <%= raw item.caption if item.caption != nil %>
+                  </p>
+                </div>
+              </div>
+            <% end %>
+            </div><!-- carousel-inner -->
+            <!--          <a class="left carousel-control" href="#main_carousel" data-slide="prev">&lsaquo;</a>-->
+            <!--          <a class="right carousel-control" href="#main_carousel" data-slide="next">&rsaquo;</a>-->
+          </div><!-- main_carousel -->
+        </div><!--/wrapper span-->
+        <div class="span1 hidden-phone"></div>
+      </div><!--/wrapper row-->
+<% end %>
+      <!--#################### HOME LEAD ######################################-->
+      
+        <% content_for :home_lead do %>
+        <div class="row-fluid">
+          <div class="span12 home-page-subcontent">
+            <%= raw @page.content_for(:body_lead) %>
+          </div><!--/span --> 
+
+      <% end %>
+      </div>
+    </div>
+  </body>
+</html>

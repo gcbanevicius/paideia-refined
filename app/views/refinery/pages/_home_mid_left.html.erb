@@ -1,0 +1,46 @@
+
+	<% if @page.content_for(:image_links) != nil %>
+	  <% links = strip_tags(@page.content_for(:image_links)).split(' ') %>
+	<% else %>
+	  <% links = [] %>
+	<% end %>
+
+<% @page.images.each_with_index do |image, index| %>
+
+  <% if (index >= 4) %>
+    <% break %>
+
+  <% elsif (index % 2 == 0) %>
+
+	<div class="row-fluid program-row">
+	<div class="span12">		  
+		<% if links[index] != nil %>
+		  <% link = links[index] %>
+		<% else %>
+		  <% link = "#" %>
+		<% end %>
+	  <a href="<%= link %>"><%= image_tag image.thumbnail("135x135").url, :class => "photo-boxed image-float-left" %></a>
+
+	  <span class="caption"><%= raw @page.caption_for_image_index(index) %></span>
+	</div>
+	</div>
+
+  <% elsif (index % 2 == 1) %>
+
+	<div class="row-fluid program-row">
+	<div class="span12">
+		  
+		<% if links[index] != nil %>
+		  <% link = links[index] %>
+		<% else %>
+		  <% link = "#" %>
+		<% end %>
+	  <a href="<%= link %>"><%= image_tag image.thumbnail("135x135").url, :class => "photo-boxed image-float-right" %></a>
+	  
+	  <span class="caption"><%= raw @page.caption_for_image_index(index) %></span>
+	</div>
+	</div>	
+
+  <% end %>
+
+<% end %>

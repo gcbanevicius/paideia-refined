@@ -1,0 +1,304 @@
+
+.header-row {
+  margin-top: 8px;
+  margin-bottom: 2px;
+}
+
+header img {
+  margin-left: 30px;
+}
+
+
+/* the primary nav bar is under header */
+header .colorbar {
+  background-color: #308ABF;
+/*  padding: 0 30px;*/
+  min-height: 10px !important;
+  max-height: 10px !important;
+}
+
+/* the secondary bar is regular colorbar */
+.colorbar {
+  background-color: #308ABF;
+/*  padding: 0 30px;*/
+  min-height: 5px !important;
+  max-height: 5px !important;
+}
+
+header .nav-list .divider{
+  margin: 9px 5px;
+}
+
+
+
+.nav-list .divider{
+  margin: 9px 25px;
+}
+
+header .navbar {
+/*  margin-bottom: 0;*/
+  margin: 0 30px;
+}
+
+.navbar {
+/*  margin-bottom: 0;*/
+  margin: 0 30px;
+}
+
+.nav-row {
+/*  padding-bottom: 0;*/
+}
+
+.nav-span {
+/*  margin-bottom: 0;*/
+}
+
+.navbar-inner {
+
+  border-radius: 0px;
+  border: none; /* 1.5px solid #fff; */
+  box-shadow: none;
+  
+  background-color: #D4D4D4;
+  background-image: none;
+  
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+
+.navbar-inner > .container {
+  text-align: center;
+}
+
+.navbar .nav {
+    float:none;
+    display:inline-block;
+    *display:inline; /* ie7 fix */
+    *zoom:1; /* hasLayout ie7 trigger */
+
+/*    padding-left: 5px;*/
+/*    padding-right: 5px;*/
+/*    padding-bottom: 0;*/
+    
+    margin: 0;
+    width: 100%;
+}
+
+header .navbar .nav > li {
+/*  margin-left:0;*/
+/*  margin-right:0;*/
+/*  margin-bottom:0;*/
+/*  border: 1px solid transparent;*/
+  
+/*  width: 20%;*/
+  line-height: 20px;
+  display: inline-block;
+  float: none;
+}
+
+.navbar .nav > li {
+/*  margin-left:0;*/
+/*  margin-right:0;*/
+/*  margin-bottom:0;*/
+/*  border: 1px solid transparent;*/
+  
+/*  width: 20%;*/
+  line-height: 15px;
+  display: inline-block;
+  float: none;
+}
+
+.navbar .nav li.dropdown.open > .dropdown-toggle,
+.navbar .nav li.dropdown.active > .dropdown-toggle, 
+.navbar .nav li.dropdown.open.active > .dropdown-toggle,
+.navbar .nav li.open > .dropdown-toggle,
+.navbar .nav li.active > .dropdown-toggle, 
+.navbar .nav li.open.active > .dropdown-toggle,
+.navbar .nav > li:hover > a,
+.navbar .nav > li:active > a, 
+.navbar .nav > li:focus > a
+{
+  background-color: #E9F4F8; /*  #BAF2FF; */
+/*  background-color: #5297CB;*/
+  color: #000;
+/*  text-shadow: .5px .5px #000;*/
+  text-shadow: none;
+}
+
+
+header .navbar .nav > li > a {
+  font-size: 28px;
+/*  color: #C1C1AF;*/
+  color: #000;
+
+
+
+  font-family: "Marcellus SC", sans-serif;
+/*  font-family: Tahoma, Geneva, sans-serif;*/
+/*  font-weight: bold;*/
+  text-shadow: none;
+}
+
+.navbar .nav > li > a {
+  font-size: 20px;
+/*  color: #C1C1AF;*/
+  color: #000;
+  font-family: "Marcellus SC", sans-serif;
+/*  font-family: Tahoma, Geneva, sans-serif;*/
+/*  font-weight: bold;*/
+  text-shadow: none;
+}
+
+
+.navbar .nav > li > a:hover,
+.navbar .nav > li > a:active, 
+.navbar .nav > li > a:focus,
+.navbar .nav > li.selected > a, 
+.navbar .nav > li.selected > a,
+.navbar .nav > li.selected > a,
+.navbar .nav > li.active > a,
+.navbar .nav > li.active > a,
+.navbar .nav > li.active > a
+.navbar .nav > li.selected > a:hover, 
+.navbar .nav > li.selected > a:active,
+.navbar .nav > li.selected > a:focus,
+.navbar .nav > li.active > a:hover,
+.navbar .nav > li.active > a:active,
+.navbar .nav > li.active > a:focus
+ {
+/*  color: #C1C1AF;*/
+  background-color: #E9F4F8; /* #BAF2FF; */
+/*  background-color: #5297CB;*/
+  color: #000;
+/*  color: #373737;*/
+  text-decoration: none;
+  text-shadow: none; /* .5px .5px #000; */
+  box-shadow: none;
+}
+
+/*############################# DROPDOWNS ##################################*/
+
+
+.navbar .nav > li.dropdown > ul.dropdown-menu {
+/*  background-color: #00047A;*/
+  background-color: #D4D4D4;
+/*  width: 1000px;*/
+  min-width: 100%;
+}
+
+ul.dropdown-menu > li {
+  width: 100%;
+  margin-right: 20px;
+/*  float: left;*/
+/*  display: block;*/
+
+  
+}
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus, 
+.dropdown-submenu:hover > a, 
+.dropdown-submenu:focus > a {
+/*  background-color: #6668AF !important;*/
+/*  background-color: #5297CB;*/
+  background-color: #E9F4F8; /* #BAF2FF; */
+  background-image: none;
+/*  color: #C1C1AF;*/
+  color: #000;
+  border: 0px solid #308ABF;
+  border-top-width: 3px;
+/*  box-shadow: 1px 0px 5px 1px #00047A inset;*/
+}
+
+.dropdown-menu {
+  float:none;
+  left: auto;	
+  background-color: #00047A;
+  top: auto !important;  /* fixes issue with nav dropdowns displaying too far below parent */
+  padding: 0px;
+  background-color: #D4D4D4;
+  border: none;
+}
+
+.dropdown-menu > li:hover {
+/*  width: 100%;*/
+}
+
+.dropdown-menu > li > a {
+/*  color: #C1C1AF;*/
+  color: #000;
+  float:left;
+  text-align: left;
+/*  font-family: Tahoma, Geneva, sans-serif;*/
+  font-family: "Julius Sans One", sans-serif;
+  font-size: 15px;
+  width: 100%;
+/*  width: 250px;*/
+display:block;
+
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+/*  margin-right: -10px;*/
+/*  margin-left: 10px;*/
+  text-indent: 10px;
+  
+  
+  border: 0px solid #D4D4D4;
+  border-top-width: 3px;
+}
+
+
+
+/*##################################*/
+
+.nav {
+/*  hackish, I know, but the only way I could get menu items flush at bottom of navbar... */
+/*  margin-bottom: -5px !important;	*/
+}
+
+/* This rule makes toplevel menu items clickable links and also displays dropdown menus on hover - WHOA! */
+ul.nav li:hover ul.dropdown-menu { display: block; }
+a.menu:after, .dropdown-toggle:after { content: none; }
+
+
+.dropdown-menu {
+  border-radius: 0;
+  margin: 0;
+/*  border: 1px solid rgb(0, 0, 0);*/
+}
+
+/*below solution for removing caret found here: http://stackoverflow.com/questions/10798129/remove-bootstrap-dropdown-caret*/
+.navbar .nav > li > .dropdown-menu::after, 
+.navbar .nav > li > .dropdown-menu::before {
+  display:none;
+}
+
+
+/* to keep first list item's caret from being a different color */
+li > a.dropdown-toggle > b.caret {
+  border-bottom-color: #0088CC !important;
+  border-top-color: #0088CC !important;
+}
+
+/* to keep first list item's caret from being a different color */
+.nav .dropdown-toggle:hover .caret,
+.nav .dropdown-toggle:focus .caret {
+  border-bottom-color: #005580 !important;
+  border-top-color: #005580 !important;
+}
+
+.nav-list > .nav-header > a,
+.nav-list > .nav-header > a:hover,
+.nav-list > .nav-header > a:focus {
+/*  background-color: #308ABF; /* #5297CB; */
+  font-family: "Marcellus SC", sans-serif;
+  font-weight: normal;
+}
+
+h6 {
+    font-size: 16px;
+    text-align: center;
+    font-family: "Lucida Console",sans-serif;
+} 
+
+

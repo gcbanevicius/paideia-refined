@@ -1,0 +1,16 @@
+
+<div class="row-fluid">        
+  <div class="span12">
+  </div><!--/span -->
+</div><!--row-fluid-->
+
+	<div class="row-fluid">
+        <div class="span1">
+        </div><!--/span -->
+        <div class="span10">
+
+	  <%= render '/refinery/content_page' %>
+
+        </div><!--/span-->
+        </div><!--/row-->
+
