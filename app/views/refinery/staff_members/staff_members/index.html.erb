@@ -1,8 +1,8 @@
-<% content_for :body do %>
+<%#= content_for :body do %>
 
   <div class="row-fluid">
 
-  <div class="span3 left-banner banner hidden-phone">
+  <div class="span3 left-banner banner z hidden-phone">
 
     <ul class="nav nav-list">
     <% parent_page = @page.parent %>
@@ -71,9 +71,11 @@
 <div class="span12">
 	<%= render :partial => "paginate" %>
 
-<% end %>
   </div><!--/span -->
 </div><!--row-fluid-->
+
+<%#= end %>
+
 
 <%#= raw @page.content_for(:body) %>
 <%#= render '/refinery/content_page', :hide_sections => :body_content_title %>
