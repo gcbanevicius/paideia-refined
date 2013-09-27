@@ -27,7 +27,7 @@
             <% end %>
           </ol>
           <div class="carousel-inner">
-            <% Refinery::CarouselImages::CarouselImage.all.each_with_index do |item, index| %>
+            <% Refinery::CarouselImages::CarouselImage.order('position ASC').all.each_with_index do |item, index| %>
               <% if (index == 0) %>
                 <div class="item active">
                   <a href="<%= item.link %>"><%= image_tag item.image.url if item.image != nil %></a>

@@ -1,8 +1,5 @@
 
-       
-	<div class="span1">
-        </div><!--/span -->
-	<div class="span5">
+	<div class="span6">
 
   <div class="row-fluid">
   <div class="span12 hero-unit">
@@ -49,10 +46,8 @@
 	        </div><!--/span-->
 	      </div><!--/row-fluid-->
 	    </div><!--/span-->
-            <div class="span7">
+            <div class="span8">
 	      <p align="center" > <%=raw item.bio%> </p>
-	    </div>
-            <div class="span1">
 	    </div>
 	  </div><!--/row-fluid-->
 	</div>

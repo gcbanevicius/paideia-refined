@@ -252,7 +252,16 @@ h3 {
 }
 
 .hero-unit h2 {
-    font-size: 26px;
+    font-size: 22px;
+    font-weight: bold;
 }
+
+.hero-unit h3 {
+    font-size: 15px;
+}
+
+
+/*##################################### MODAL 
+
 
 

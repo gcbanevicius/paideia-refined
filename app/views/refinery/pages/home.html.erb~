@@ -27,7 +27,7 @@
             <% end %>
           </ol>
           <div class="carousel-inner">
-            <% Refinery::CarouselImages::CarouselImage.all.each_with_index do |item, index| %>
+            <% @carousel_images.each_with_index do |item, index| %>
               <% if (index == 0) %>
                 <div class="item active">
                   <a href="<%= item.link %>"><%= image_tag item.image.url if item.image != nil %></a>
@@ -51,7 +51,7 @@
             <!--          <a class="right carousel-control" href="#main_carousel" data-slide="next">&rsaquo;</a>-->
           </div><!-- main_carousel -->
         </div><!--/wrapper span-->
-
+        <div class="span1 hidden-phone"></div>
       </div><!--/wrapper row-->
 <% end %>
       <!--#################### HOME LEAD removed (in backup) ######################################-->
