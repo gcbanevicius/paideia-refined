@@ -81,7 +81,6 @@ gem 'refinerycms-inquiries', '~> 2.0.0'
 gem 'will_paginate', '~> 3.0'
 
 ## home-made engines
-gem 'refinerycms-testimonials', :path => 'vendor/extensions'
 gem 'refinerycms-carousel_images', :path => 'vendor/extensions'
 gem 'refinerycms-staff_members', :path => 'vendor/extensions'
 

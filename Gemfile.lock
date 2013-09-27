@@ -60,8 +60,6 @@ PATH
       refinerycms-core (~> 2.0.10)
     refinerycms-staff_members (1.0)
       refinerycms-core (~> 2.0.10)
-    refinerycms-testimonials (1.0)
-      refinerycms-core (~> 2.0.10)
 
 GEM
   remote: https://rubygems.org/
@@ -303,7 +301,6 @@ DEPENDENCIES
   refinerycms-inquiries (~> 2.0.0)
   refinerycms-page-images (~> 2.0.0)
   refinerycms-staff_members!
-  refinerycms-testimonials!
   sass-rails (~> 3.2.3)
   sqlite3
   taps
