@@ -1,0 +1,8 @@
+require 'dragonfly/rails/images'
+
+app = Dragonfly[:images]
+app.datastore = Dragonfly::DataStorage::S3DataStore.new({
+  :bucket_name        => 'paideiainstitute',
+  :access_key_id      => 'AKIAIQAPQZDNN3TDRBQQ',
+  :secret_access_key  => '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'
+})

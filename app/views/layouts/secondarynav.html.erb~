@@ -14,6 +14,11 @@
 
     <%= stylesheet_link_tag "application", :media => "all" %>
 
+
+    <!-- For all other devices, has to be first for Chrome -->
+    <!-- Size should be 32 x 32 pixels -->
+    <%= favicon_link_tag '/public/favicon.ico', :rel => 'shortcut icon' %>
+
     <!-- For third-generation iPad with high-resolution Retina display: -->
     <!-- Size should be 144 x 144 pixels -->
     <%= favicon_link_tag 'apple-touch-icon-144x144-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144' %>
@@ -29,10 +34,6 @@
     <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
     <!-- Size should be 57 x 57 pixels -->
     <%= favicon_link_tag 'apple-touch-icon-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png' %>
-
-    <!-- For all other devices -->
-    <!-- Size should be 32 x 32 pixels -->
-    <%= favicon_link_tag '/public/favicon.ico', :rel => 'shortcut icon' %>
 
     <link href='http://fonts.googleapis.com/css?family=Average' rel='stylesheet' type='text/css'>
 
@@ -88,7 +89,7 @@
 
         <div class="container">
 
-    <ul class="nav nav-list">
+    <ul id="main-menu-left" class="nav">
     <% parent_page = @page.parent %>
     <% parent_page ||= @page %>
     <% parent_link = refinery.url_for(parent_page.url) %>
